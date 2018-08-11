@@ -36,10 +36,10 @@ and it will need an additional vendor Lodash.
 ## 3. Set navigation and language
 
 Make sure you have following main tag on page.
-Change data-nav and data-lan to your own value.
+Change `data-nav` and `data-lan` to your own value.
 
 ```html
-<main id="body" data-nav="home"></main>
+<main id="body" data-nav="home" data-lan="en"></main>
 ```
 
 ### 4. Test GDNR with VPN
@@ -60,12 +60,15 @@ Take `Chrome` for example:
 1. And in section of `Storage`, you will find `Local Storage` folder.
 1. Locate current website and click, for example "//sample.com/".
 1. Find "gdnr-geoip" key on the right, click and press `delete`.
-1. You can leave the `DevTools` panel open and quickly remove "gdnr-geoip" cache between switches.
+1. You can leave the `DevTools` panel open, and quickly remove "gdnr-geoip" cache between switches.
 1. If you ever choose to cancel redirection, you will need to remove "gdnr-no" item as well.
 
 ## 5. Maintain and update GDNR
 
 Data is stored in `json` files, which is separated from main script.
+You can edit them in a datasheet,
+and convert with "[Mr. Data Converter](https://shancarter.github.io/mr-data-converter/)"
+(JSON - Dictionary)
 
 ## 6. Extra
 
