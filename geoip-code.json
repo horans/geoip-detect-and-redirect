@@ -1,0 +1,8 @@
+{
+  "english": { "label":"English", "code":"en", "geoip":""},
+  "french": { "label":"Français", "code":"fr", "geoip":"FR, DZ, MA"},
+  "german": { "label":"Deutsch ", "code":"de", "geoip":"DE, AT"},
+  "spanish": { "label":"Español", "code":"es", "geoip":"ES, MX, AR, CL, CO, PE"},
+  "portuguese": { "label":"Português", "code":"pt", "geoip":"PT, BR"},
+  "italian": { "label":"Italiano", "code":"it", "geoip":"IT"}
+}

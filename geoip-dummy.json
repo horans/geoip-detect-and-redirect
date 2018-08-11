@@ -1,0 +1,8 @@
+{
+  "code": "200",
+  "msg": "The request is successful",
+  "data": {
+    "ip": "150.242.228.234",
+    "country": "FR"
+  }
+}
