@@ -36,7 +36,8 @@ var gdnr = {
     code: 'geoip-code.json',
     link: 'geoip-link.json',
     l10n: 'geoip-l10n.json',
-    modal: 'geoip-modal.html'
+    modal: 'geoip-modal.html',
+    old: 'geoip-modal-old.html'
   },
   language: {
     default: 'english',
@@ -70,7 +71,7 @@ $('body').on('gdnr.get.modal', function () {
 
 // get modal
 $('body').on('gdnr.need.redirect', function () {
-  $.get(gdnr.path + gdnr.api.modal, function (res) {
+  $.get(gdnr.path + ($.fn.tooltip.Constructor.VERSION.charAt(0) === '4' ? gdnr.api.modal : gdnr.api.old), function (res) {
     $('body').append(res)
     $('.gdnr-current').text(_.capitalize(gdnr.language.current))
     $('.gdnr-redirect').text(_.capitalize(gdnr.language.redirect))
@@ -178,7 +179,7 @@ $('body').on('gdnr.get.navi', function () {
 
 // get navigation
 $('body').on('gdnr.get.lang', function () {
-  gdnr.current.navi = $('main#body').data('nav')
+  gdnr.current.navi = $('body').data('nav') || $('main#body').data('nav')
   if (gdnr.current.navi) {
     $('body').trigger('gdnr.get.navi')
   } else {
@@ -188,7 +189,7 @@ $('body').on('gdnr.get.lang', function () {
 
 // get language
 $('body').on('gdnr.get.path', function () {
-  gdnr.current.lang = $('main#body').data('lan')
+  gdnr.current.lang = $('body').data('lan') || $('main#body').data('lan')
   if (gdnr.current.lang) {
     $('body').trigger('gdnr.get.lang')
   } else {
