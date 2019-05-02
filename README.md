@@ -28,8 +28,9 @@ GDNR works only for sites with Bootstrap (modal) and jQuery,
 and it will need an additional vendor Lodash.
 
 ```html
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash"></script>
+<script src="https://cdn.jsdelivr.net/gh/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="//sample.com/gdnr/geoip-redirect.js"></script>
 ```
 
@@ -46,6 +47,7 @@ Change `data-nav` and `data-lan` to your own value.
 
 You have to use your own GEOIP API to get user location data.
 The `geoip-dummy.json` is only for preview.
+You should change that in `geoip-redirect.js`.
 We added `localStorage` cache to reduce repeat requests to backend API.
 
 When you are testing GDNR with VPN and switching between countries,
@@ -77,6 +79,7 @@ and convert with "[Mr. Data Converter](https://shancarter.github.io/mr-data-conv
 * [Boostrap](https://github.com/twbs/bootstrap)
 * [jQuery](https://github.com/jquery/jquery)
 * [Lodash](https://github.com/lodash/lodash)
+* [Get Current Path](https://github.com/horans/get-current-path)
 
 ### Linter
 
@@ -86,6 +89,14 @@ and convert with "[Mr. Data Converter](https://shancarter.github.io/mr-data-conv
 
 ### Change Log
 
-__180811__
+```text
+190502
+* add demo
+* improve path detect
+* compatible with Bootstrap4
+```
 
+```text
+180811
 * initial release
+```

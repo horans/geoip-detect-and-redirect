@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <meta name="renderer" content="webkit">
+  <title>GEOIP Detect and Redirect</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/twbs/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<!-- body -->
+<main id="body" data-nav="home" data-sys="auto" data-lan="fr">
+  <section class="mt-5 mb-5">
+    <div class="container">
+      <h1>GEOIP Detect and Redirect</h1>
+      <quote>This feature will allow editors to set up the connection between a series of pages, which are localizations of a same subject. "GEOIP Detect and Redirect" or "GDNR" in short, will check user's location and compare with current page's language. If they are not matched, a modal/popup will be shown to ask user if they want to jump to the right page. Once set up, GDNR should be executed automatically, please check <code>console log</code> if it is not working as expected.</quote>
+      <ul>
+        <li>If user's location is not on code list, the popup will not show.</li>
+        <li>If user chooses to cancel the redirection, the popup will not show anymore.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash"></script>
+<script src="https://cdn.jsdelivr.net/gh/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./geoip-redirect.js"></script>
+</body>
+</html>

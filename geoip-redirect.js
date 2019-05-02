@@ -3,13 +3,27 @@
 *  description: main script                         *
 *  author: horans@gmail.com                         *
 *  url: github.com/horans/geoip-detect-and-redirect *
-*  update: 180730                                   *
+*  update: 190502                                   *
 ****************************************************/
 /* global $ _ */
+// github.com/horans/get-current-path
+function gcp (name) {
+  var cs = document.currentScript
+  var cl
+  if (cs) {
+    cl = cs.src
+  } else {
+    var ss = document.querySelectorAll('script[src' + (name ? ('*="' + name + '"') : '') + ']')
+    cs = ss[ss.length - 1]
+    cl = cs.getAttribute.length === undefined ? cs.getAttribute('src', -1) : cs.src
+  }
+  return cl.substring(0, cl.lastIndexOf('/') + 1)
+}
+
 // namespace
 var gdnr = {
   delay: 2,
-  path: '',
+  path: gcp(),
   current: {
     lang: '',
     navi: '',
@@ -18,7 +32,7 @@ var gdnr = {
   },
   api: {
     // geoip: 'https://i.wondershare.com/api/v1/geoip/country',
-    geoip: 'geoip-dummy.json',
+    geoip: 'geoip-dummy.json', // change to your own api
     code: 'geoip-code.json',
     link: 'geoip-link.json',
     l10n: 'geoip-l10n.json',
@@ -60,8 +74,12 @@ $('body').on('gdnr.need.redirect', function () {
     $('body').append(res)
     $('.gdnr-current').text(_.capitalize(gdnr.language.current))
     $('.gdnr-redirect').text(_.capitalize(gdnr.language.redirect))
+    var l = $('.gdnr-list')
+    var t = l.html()
     _.each(gdnr.link[gdnr.current.navi], function (o, k) {
-      $('.gdnr-list').append('<li><a href="' + o + '">' + gdnr.code[k].label + '</a></li>')
+      l.append(function () {
+        return t.replace(l.find('li:first').text(), '<a href="' + o + '">' + gdnr.code[k].label + '</a>')
+      })
     })
     $('.gdnr-more').tooltip({ container: 'body' })
     $('body').trigger('gdnr.get.modal')
@@ -147,7 +165,7 @@ $('body').on('gdnr.get.navi', function () {
     $.getJSON(gdnr.api.geoip, function (res) {
       if (res && (res.code === 200)) {
         gdnr.current.geoip = res.data.country
-        window.localStorage.setItem('gdnr-geoip', res.country_code)
+        window.localStorage.setItem('gdnr-geoip', res.data.country)
         $('body').trigger('gdnr.get.geoip')
       } else {
         window.console.log('[gdnr] cannot find geoip')
@@ -180,12 +198,6 @@ $('body').on('gdnr.get.path', function () {
 
 // get path
 $('body').on('gdnr.check.lodash', function () {
-  gdnr.temp = {}
-  gdnr.temp.scripts = document.getElementsByTagName('script')
-  gdnr.temp.src = gdnr.temp.scripts[gdnr.temp.scripts.length - 1].src
-  gdnr.path = gdnr.temp.src.substring(0, gdnr.temp.src.lastIndexOf('/') + 1)
-  delete gdnr.temp
-
   $('body').trigger('gdnr.get.path')
 })
 
