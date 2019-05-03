@@ -71,6 +71,7 @@ $('body').on('gdnr.get.modal', function () {
 
 // get modal
 $('body').on('gdnr.need.redirect', function () {
+  // stackoverflow.com/questions/21369029/
   $.get(gdnr.path + ($.fn.tooltip.Constructor.VERSION.charAt(0) === '4' ? gdnr.api.modal : gdnr.api.old), function (res) {
     $('body').append(res)
     $('.gdnr-current').text(_.capitalize(gdnr.language.current))
