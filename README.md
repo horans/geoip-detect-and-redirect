@@ -91,12 +91,10 @@ and convert with "[Mr. Data Converter](https://shancarter.github.io/mr-data-conv
 
 ```text
 190502
-* add demo
-* improve path detect
-* compatible with Bootstrap4
-```
++ add demo
+# improve path detect
+# compatible with Bootstrap4
 
-```text
 180811
-* initial release
++ initial release
 ```

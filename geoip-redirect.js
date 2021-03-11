@@ -3,9 +3,10 @@
 *  description: main script                         *
 *  author: horans@gmail.com                         *
 *  url: github.com/horans/geoip-detect-and-redirect *
-*  update: 190502                                   *
+*  update: 210311                                   *
 ****************************************************/
 /* global $ _ */
+/* eslint no-var: 0 */
 // github.com/horans/get-current-path
 function gcp (name) {
   var cs = document.currentScript
