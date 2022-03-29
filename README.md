@@ -30,7 +30,7 @@ and it will need an additional vendor Lodash.
 ```html
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash"></script>
-<script src="https://cdn.jsdelivr.net/gh/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/twbs/bootstrap@4/dist/js/bootstrap.min.js"></script>
 <script src="//sample.com/gdnr/geoip-redirect.js"></script>
 ```
 
@@ -90,6 +90,9 @@ and convert with "[Mr. Data Converter](https://shancarter.github.io/mr-data-conv
 ### Change Log
 
 ```text
+220329
+# demo use Bootstrap4
+
 190502
 + add demo
 # improve path detect
